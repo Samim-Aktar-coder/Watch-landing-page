@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Dela+Gothic+One&family=Gentium+Book+Plus:wght@400;700&family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&family=Raleway:wght@500;600;700&family=Rubik:wght@400;500;600;700;800&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+
+body {
+    background-color: #ffe097;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100vh;
+    max-height: 150vh;
+    position: relative;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.circle {
+    width: 35rem;
+    height: 35rem;
+    border: 2.5rem solid #ffd26a;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.circle-1 {
+    left: -20rem;
+    top: -20rem;
+}
+
+.circle-2 {
+    top: 50%;
+    right: -25rem;
+    transform: translateY(-50%);
+}
+
+.container {
+    width: 80%;
+    background-image: url('./img/bg-2.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 90%;
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar {
+    background-color: #191717;
+    width: 4rem;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: .3s linear;
+    z-index: 99;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sidebar.active {
+    width: 8rem;
+    align-items: start;
+    padding-inline: 1rem;
+}
+
+.toggle-bar {
+    width: 100%;
+    height: 4rem;
+    background-color: #393838;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidebar.active .toggle-bar {
+    background-color: #191717;
+    width: 1rem;
+}
+
+.toggle-bar i {
+    font-size: 2rem;
+}
+
+.options,
+.social-icons {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dot,
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.dot {
+    height: .5rem;
+}
+
+.dot span {
+    width: 0.3rem;
+    height: 0.3rem;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+}
+
+.dot.active span,
+.dot:hover span {
+    background-color: #c18546;
+}
+
+
+.dot p {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    font-size: .8rem;
+    transition: all 1s;
+}
+
+.sidebar.active .dot p {
+    display: block;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.dot.active p,
+.dot:hover p {
+    color: #c18546;
+}
+
+
+.social-icons {
+    padding-bottom: 1rem;
+    gap: 1rem;
+}
+
+
+.icon p {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    font-size: .8rem;
+    transition: all 1s;
+}
+
+.sidebar.active .icon p {
+    display: block;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.icon:hover {
+    color: #c18546;
+}
+
+.main {
+    width: calc(100% - 4rem);
+    height: 100%;
+    padding-inline: 1rem;
+    margin-left: 4rem;
+}
+
+.navbar {
+    height: 10%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar i {
+    display: none;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.nav__logo img {
+    width: 2rem;
+}
+
+.nav__logo h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav__list a {
+    text-decoration: none;
+    color: white;
+    font-size: .8rem;
+}
+
+.nav__list a:hover,
+.nav__list a.active {
+    color: #c18546;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90%;
+}
+
+.content-info {
+    flex: 1;
+}
+
+.content-info h3 {
+    font-size: 1.7rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: .4rem;
+    margin-left: 1rem;
+}
+
+.content-info h1 {
+    font-style: italic;
+    font-size: 4.8rem;
+    line-height: 4.5rem;
+    color: #c18546;
+    font-weight: 800;
+}
+
+.content-info h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-left: 1rem;
+    color: #c18546;
+}
+
+.content-info p {
+    font-size: .8rem;
+    font-weight: 400;
+    margin-block: 2rem 6rem;
+}
+
+.content-info p::before {
+    content: '';
+    width: 6rem;
+    height: 2.2px;
+    background-color: #c18546;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.content-info button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 1.1rem;
+    padding: .3rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.content-info button:hover {
+    color: #c18546;
+    border-color: #c18546;
+}
+
+.content-img {
+    flex: 1;
+    height: 100%;
+    width: 20rem;
+}
+
+.img-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-item img {
+    width: 70%;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    top: unset;
+    left: unset;
+    bottom: 1rem;
+    right: 2rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.swiper-button-prev {
+    right: 5rem;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    border-color: #c18546;
+}
+
+
+
+.swiper-button-prev i,
+.swiper-button-next i {
+    font-size: 1.2rem;
+    color: white;
+    transition: .3s;
+}
+
+.swiper-button-prev:hover i,
+.swiper-button-next:hover i {
+    color: #c18546;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: '';
+}
+
+@media screen and (max-width:1170px) {
+
+    body {
+        min-height: 130vh;
+        height: unset;
+    }
+
+    .container {
+        height: 95%;
+    }
+
+    .content {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .content-info p {
+        margin-block: 2rem;
+        font-size: 1rem;
+    }
+
+    .content-img {
+        width: 50%;
+
+    }
+
+    .img-item img {
+        width: 90%;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 50%;
+        right: 0;
+        bottom: unset;
+    }
+
+    .swiper-button-prev {
+        left: 0;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .navbar {
+        padding-block: 1rem;
+    }
+
+    .navbar i {
+        display: block;
+    }
+
+    .nav__menu {
+        position: absolute;
+        background-color: #191717;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 40%;
+        z-index: 99;
+        transition: .3s;
+    }
+
+    .nav__menu.show {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 2rem;
+    }
+
+    .nav__list a {
+        font-size: 1.2rem;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 2rem;
+    }
+
+    .show-menu {
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width:570px) {
+    .container {
+        width: 95%;
+    }
+
+    .sidebar {
+        width: 3rem;
+    }
+
+    .toggle-bar {
+        height: 3rem;
+    }
+    .main{
+        margin-left: 3rem;
+        padding-inline: .5rem;
+    }
+
+    .nav__logo h3 {
+        font-size: 1.1rem;
+    }
+
+    .nav__menu {
+        width: 55%;
+    }
+
+    .content-info h3 {
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+    .content-info h1 {
+        font-size: 2.7rem;
+    }
+
+    .content-info h4 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .content-info p {
+        font-size: .8rem;
+    }
+
+    .content-info button {
+        font-size: 1rem;
+    }
+
+    .content-img {
+        width: 90%;
+    }
+}
