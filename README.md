@@ -1,4 +1,4 @@
-[![MasterHead](https://raw.githubusercontent.com/Samim-Aktar-coder/Watch-landing-page/main/Github%20Banner.png)](https://samim-watch.netlify.app)
+[![MasterHead](https://image-link-website.netlify.app/img/watch-website.png)](https://samim-watch.netlify.app)
 
 ### Live: [Click Here](https://samim-watch.netlify.app)
 
@@ -16,10 +16,9 @@ Tech stack I use to build this app:
 
 ## 🙋‍♂️ Author
 
-- [@SamimAktar](https://github.com/Samim-Aktar-coder)
+- [@SamimAktar](https://github.com/samimaktar-coder)
 
 ## Installation
-
 
 ```bash
     No installation Required
